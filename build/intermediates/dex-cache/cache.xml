@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="D:\Univ\SEMESTER VI\Technopreneurship\MissKeen\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="25.0.2"
+        sha1="518768f3200963fbfec652f498da2c9d39245234">
+        <dex dex="D:\Univ\SEMESTER VI\Technopreneurship\MissKeen\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-25.3.0_50e88051bbbf2530df4d03a79a704a10f1ba8a47.jar" />
+    </item>
+    <item
+        jar="D:\Univ\SEMESTER VI\Technopreneurship\MissKeen\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="25.0.2"
+        sha1="93c1199fcb0a34b980e6fff8350daff62e696ec2">
+        <dex dex="D:\Univ\SEMESTER VI\Technopreneurship\MissKeen\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-25.3.0_0010a5e2e4ee6da5cc2458e2e504a03af4136b8f.jar" />
+    </item>
+    <item
+        jar="D:\Univ\SEMESTER VI\Technopreneurship\MissKeen\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="25.0.2"
+        sha1="d6a04527c17597019dad82777c5094a3d60d1c33">
+        <dex dex="D:\Univ\SEMESTER VI\Technopreneurship\MissKeen\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-25.3.0_74dfb56b492f023071027a321416f713249eeee0.jar" />
+    </item>
+    <item
+        jar="D:\Univ\SEMESTER VI\Technopreneurship\MissKeen\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="25.0.2"
+        sha1="93c10d68ab5ea070f15782ae6d3a28d1f1d8f45e">
+        <dex dex="D:\Univ\SEMESTER VI\Technopreneurship\MissKeen\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-25.3.0_ea2effb4d126d506b47bcac7eb4f67450930a93e.jar" />
+    </item>
+    <item
+        jar="D:\Univ\SEMESTER VI\Technopreneurship\MissKeen\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="25.0.2"
+        sha1="5cc5ef8347a6bafa14556cbd35230aa9b3431bb0">
+        <dex dex="D:\Univ\SEMESTER VI\Technopreneurship\MissKeen\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-25.3.0_773fabd4452826af7c96932f00743cd5ee27f2ad.jar" />
+    </item>
+    <item
+        jar="D:\Univ\SEMESTER VI\Technopreneurship\MissKeen\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="D:\Univ\SEMESTER VI\Technopreneurship\MissKeen\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-25.3.0_7ad4c18659514689c711601ac94cbf71b798b317.jar" />
+    </item>
+    <item
+        jar="D:\Univ\SEMESTER VI\Technopreneurship\MissKeen\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="25.0.2"
+        sha1="4b746ef0fd46acb5aaf3d9ab9a4cec22c28d3211">
+        <dex dex="D:\Univ\SEMESTER VI\Technopreneurship\MissKeen\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-25.3.0_aa2ce5bc029ec3d74b2e3e4c448e3b21275e9a26.jar" />
+    </item>
+    <item
+        jar="D:\Univ\SEMESTER VI\Technopreneurship\MissKeen\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="25.0.2"
+        sha1="70f23cb87278f89aa51e6f57e8f0fd5266572d95">
+        <dex dex="D:\Univ\SEMESTER VI\Technopreneurship\MissKeen\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-25.3.0_371690f3a35edf56f8f1c3f40c1157187624dcc2.jar" />
+    </item>
+    <item
+        jar="D:\Univ\SEMESTER V\PAM\PAM 2016\sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.0\support-annotations-25.3.0.jar"
+        jumboMode="false"
+        revision="25.0.2"
+        sha1="dd84903d2e1af25a6081ef9038ad863cb14ca3a0">
+        <dex dex="D:\Univ\SEMESTER VI\Technopreneurship\MissKeen\app\build\intermediates\pre-dexed\debug\support-annotations-25.3.0_d7bfdc57cea7f68484d06e491cd9ff9668f11954.jar" />
+    </item>
+    <item
+        jar="D:\Univ\SEMESTER VI\Technopreneurship\MissKeen\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="25.0.2"
+        sha1="425c7b17887e5c3f8cbdf67ba171bc246f29b42c">
+        <dex dex="D:\Univ\SEMESTER VI\Technopreneurship\MissKeen\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-25.3.0_4d8bd52eafeb315bbe621f3ff425020995f4dfbe.jar" />
+    </item>
+
+</items>
