@@ -65,8 +65,8 @@ public class RecipeListActivity extends AppCompatActivity {
 
 
         try {
-            JSONObject jObject = new JSONObject(json);
-            recipe = jObject.getJSONArray("result");
+
+            recipe = new JSONArray(json);
 
 
 
@@ -98,7 +98,7 @@ public class RecipeListActivity extends AppCompatActivity {
         ListAdapter adapter = new SimpleAdapter(
                 RecipeListActivity.this, recipelist, R.layout.recipe_item,
                 new String[]{"id","name","description","image","rating"},
-                new int[]{R.id.recipeid, R.id.recipedescription, R.id.recipethumbnail, R.id.reciperating}
+                new int[]{R.id.recipeid,R.id.recipename, R.id.recipedescription, R.id.recipethumbnail, R.id.reciperating}
         );
         list.setAdapter(adapter);
     }
