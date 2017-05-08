@@ -21,7 +21,7 @@
     <EditText
         android:layout_width="240dp"
         android:layout_height="wrap_content"
-        android:id="@+id/editText"
+        android:id="@+id/editUsername"
         android:background="@drawable/mbutton"
         android:textColor="@color/colorPrimary"
         android:textSize="24sp"/>
@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
-        android:id="@+id/editText2"
+        android:id="@+id/editPassword"
         android:background="@drawable/mbutton"
         android:textColor="@color/colorPrimary"
         android:textSize="24sp"/>
@@ -49,8 +49,10 @@
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:text="LOGIN"
+        android:id="@+id/btnLogin"
         android:textColor="@color/white"
         android:background="@drawable/mbutton"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"
+        android:onClick="buttonLogin" />
 </LinearLayout>

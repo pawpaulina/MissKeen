@@ -1,4 +1,4 @@
-package com.techno.misskeen;
+package com.techno.misskeen.Activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,6 +12,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.techno.misskeen.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -31,8 +32,6 @@ public class RecipeListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_recipe_list);
         list = (ListView) findViewById(R.id.recipelist);
         getDataResep();
-
-
     }
 
 
