@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    PrefHelper.saveToPref(getApplicationContext(),"ID","diisi sembarang aja");
+                    PrefHelper.saveToPref(getApplicationContext(),"ID","");
                     Intent i = new Intent(getApplicationContext(), RecipeListActivity.class);
                     startActivity(i);
                 }
