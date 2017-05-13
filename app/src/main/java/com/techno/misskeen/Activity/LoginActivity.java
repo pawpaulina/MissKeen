@@ -13,20 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListAdapter;
-import android.widget.SimpleAdapter;
-import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.NetworkResponse;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.VolleyLog;
-import com.android.volley.toolbox.HttpHeaderParser;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.techno.misskeen.Client;
 import com.techno.misskeen.Helper.PrefHelper;
 import com.techno.misskeen.R;
@@ -34,15 +21,6 @@ import com.techno.misskeen.Rest;
 import com.techno.misskeen.User;
 import com.techno.misskeen.UserObject;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
-import java.util.HashMap;
-
-import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 
@@ -54,13 +32,19 @@ public class LoginActivity extends AppCompatActivity {
     private EditText editPassword;
 
     private Button btnLogin;
+    private Button btnRegis;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         btnLogin = (Button) findViewById(R.id.btnLogin);
+        btnRegis = (Button)findViewById(R.id.btnRegis);
     }
-
+    public void buttonRegis(View v)
+    {
+        Intent i = new Intent(getApplicationContext(), RegisterActivity.class);
+        startActivity(i);
+    }
     public void buttonLogin(View v)
     {
         editUsername = (EditText) findViewById(R.id.editUsername);

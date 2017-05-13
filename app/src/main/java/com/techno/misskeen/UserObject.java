@@ -17,9 +17,19 @@ public class UserObject
     private String fullname;
     @SerializedName("telp")
     private String telp;
+    @SerializedName("alamat")
+    private String alamat;
 
     public UserObject(String email, String password) {
         this.email = email;
         this.password = password;
+    }
+    public UserObject(String email, String password,String fullname,String telp,String alamat)
+    {
+        this.email = email;
+        this.password = password;
+        this.fullname=fullname;
+        this.telp=telp;
+        this.alamat=alamat;
     }
 }

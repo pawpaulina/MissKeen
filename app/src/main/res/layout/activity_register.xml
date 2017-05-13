@@ -128,7 +128,8 @@
         android:layout_marginTop="20dp"
         android:layout_weight="0.5"
         android:background="#a845ff77"
-        android:id="@+id/btnRegis"/>
+        android:id="@+id/btnRegis"
+        android:onClick="buttonRegis"/>
         <Button
             android:layout_width="120dp"
             android:layout_height="wrap_content"
@@ -139,6 +140,7 @@
             android:layout_weight="0.5"
             android:layout_marginLeft="10dp"
             android:background="#b8000000"
-            android:id="@+id/btnBatal"/>
+            android:id="@+id/btnBatal"
+            android:onClick="buttonBatal"/>
     </LinearLayout>
 </LinearLayout>
