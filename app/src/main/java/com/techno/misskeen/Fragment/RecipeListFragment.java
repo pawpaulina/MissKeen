@@ -1,13 +1,17 @@
 package com.techno.misskeen.Fragment;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
@@ -25,19 +29,33 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 
-public class RecipeListFragment extends Fragment {
+public class RecipeListFragment extends ListFragment {
 
     ListView list;
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view;
         view = inflater.inflate(R.layout.activity_recipe_list, container, false);
+
+        return view;
+    }
+    public void onViewCreated(View view, Bundle savedInstanceState){
         list = (ListView) getView().findViewById(R.id.recipelist);
 
         getDataResep();
-        return view;
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+            }
+        });
     }
+
+
+
     public static RecipeListFragment newInstance() {
 
         Bundle args = new Bundle();
