@@ -9,10 +9,10 @@ import retrofit2.http.POST;
  * Created by Paulina on 5/9/2017.
  */
 public interface Rest {
-    @Headers({
-            "Content-Type : application json",
-            "X-Requested-With : XMLHttpRequest"
-    })
+//    @Headers({
+//            "Content-Type : application json",
+//            "X-Requested-With : XMLHttpRequest"
+//    })
     @POST("user/auth")
     Call<User> getLogin(@Body UserObject user);
     @POST("user/register")

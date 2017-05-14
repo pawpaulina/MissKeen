@@ -20,7 +20,6 @@
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://E:/PAM 2016/sdk/extras/android/m2repository/com/android/support/support-v4/23.3.0/support-v4-23.3.0-sources.jar!/" />
       <root url="jar://$USER_HOME$/Documents/sdk/extras/android/m2repository/com/android/support/support-v4/23.3.0/support-v4-23.3.0-sources.jar!/" />
 >>>>>>> master
     </SOURCES>

@@ -7,6 +7,7 @@
     <JAVADOC />
     <SOURCES>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       <root url="jar://$PROJECT_DIR$/../../../SEMESTER V/PAM/PAM 2016/sdk/extras/android/m2repository/com/android/support/support-vector-drawable/23.3.0/support-vector-drawable-23.3.0-sources.jar!/" />
 =======
@@ -14,6 +15,8 @@
       <root url="jar://$PROJECT_DIR$/../sdk/extras/android/m2repository/com/android/support/support-vector-drawable/23.3.0/support-vector-drawable-23.3.0-sources.jar!/" />
 =======
       <root url="jar://E:/PAM 2016/sdk/extras/android/m2repository/com/android/support/support-vector-drawable/23.3.0/support-vector-drawable-23.3.0-sources.jar!/" />
+=======
+>>>>>>> master
       <root url="jar://$USER_HOME$/Documents/sdk/extras/android/m2repository/com/android/support/support-vector-drawable/23.3.0/support-vector-drawable-23.3.0-sources.jar!/" />
 >>>>>>> master
     </SOURCES>

@@ -3,7 +3,8 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#9E2A2A"
-    android:gravity="center|top">
+    android:gravity="center|top"
+    android:weightSum="1">
 
     <ImageView
         android:layout_width="180dp"
@@ -24,7 +25,9 @@
         android:id="@+id/editUsername"
         android:background="@drawable/mbutton"
         android:textColor="@color/colorPrimary"
-        android:textSize="24sp"/>
+        android:textSize="16sp"
+        android:maxLines="1"
+        android:layout_weight="0.13" />
 
     <TextView
             android:layout_width="wrap_content"

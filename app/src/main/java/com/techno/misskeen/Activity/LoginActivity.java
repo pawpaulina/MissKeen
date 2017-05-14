@@ -7,6 +7,8 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -15,6 +17,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.techno.misskeen.Client;
+import com.techno.misskeen.Fragment.RecipeListFragment;
 import com.techno.misskeen.Helper.PrefHelper;
 import com.techno.misskeen.R;
 import com.techno.misskeen.Rest;
@@ -49,7 +52,7 @@ public class LoginActivity extends AppCompatActivity {
     {
         editUsername = (EditText) findViewById(R.id.editUsername);
         editPassword = (EditText) findViewById(R.id.editPassword);
-        UserObject user = new UserObject(editUsername.getText().toString(),editPassword.getText().toString());
+        UserObject user = new UserObject(editUsername.getText().toString(), editPassword.getText().toString());
         Rest rest = Client.getClient().create(Rest.class);
         Call<User> call = rest.getLogin(user);
         call.enqueue(new Callback<User>() {
@@ -58,8 +61,9 @@ public class LoginActivity extends AppCompatActivity {
                 if(response.body().getStatus().equals("true"))
                 {
                     PrefHelper.saveToPref(getApplicationContext(), "email", "password");
-                    Intent i = new Intent(getApplicationContext(), RecipeListActivity.class);
-                    startActivity(i);
+                    RecipeListFragment.newInstance();
+                    FragmentManager fm= getSupportFragmentManager();
+                    fm.beginTransaction().add(RecipeListFragment.newInstance(),"").commit();
                 }
                 else
                     if(response.body().getStatus().equals("false"))
@@ -115,7 +119,7 @@ public class LoginActivity extends AppCompatActivity {
 //            public void onResponse(String response) {
 //                    Log.d("Response : ", response);
 //                    PrefHelper.saveToPref(getApplicationContext(), "email", "password");
-//                    Intent i = new Intent(getApplicationContext(), RecipeListActivity.class);
+//                    Intent i = new Intent(getApplicationContext(), RecipeListFragment.class);
 //                    startActivity(i);
 //
 //            }}, new Response.ErrorListener()
