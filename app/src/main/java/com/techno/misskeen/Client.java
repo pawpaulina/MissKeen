@@ -10,7 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by Paulina on 5/9/2017.
  */
 public class Client {
-    public static final String BASE_URL = "http://ditoraharjo.co/misskeen/api/v1/";
+    public static final String BASE_URL = "http://ditoraharjo.co/misskeen/api/v1/test";
 
     private static Retrofit retrofit = null;
 

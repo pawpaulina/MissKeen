@@ -44,15 +44,32 @@
         android:background="@drawable/mbutton"
         android:textColor="@color/colorPrimary"
         android:textSize="24sp"/>
-
-    <Button
-        android:layout_width="120dp"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="LOGIN"
-        android:id="@+id/btnLogin"
-        android:textColor="@color/white"
-        android:background="@drawable/mbutton"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:onClick="buttonLogin" />
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+        <Button
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="REGISTRASI"
+            android:id="@+id/btnRegis"
+            android:textColor="@color/white"
+            android:background="@drawable/mbutton"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:onClick="buttonRegis" />
+        <Button
+            android:layout_marginLeft="10dp"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="LOGIN"
+            android:id="@+id/btnLogin"
+            android:textColor="@color/white"
+            android:background="@drawable/mbutton"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:onClick="buttonLogin" />
+
+    </LinearLayout>
 </LinearLayout>
