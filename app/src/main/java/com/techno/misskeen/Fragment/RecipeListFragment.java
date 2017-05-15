@@ -1,5 +1,6 @@
 package com.techno.misskeen.Fragment;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -17,9 +18,13 @@ import android.widget.Toast;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.ImageLoader;
+import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.techno.misskeen.Activity.RecipeDetail;
+import com.techno.misskeen.AppController;
+import com.techno.misskeen.LruBitmapCache;
 import com.techno.misskeen.R;
 
 import org.json.JSONArray;
@@ -28,11 +33,27 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
+import android.graphics.Bitmap;
+import android.support.v4.util.LruCache;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.ImageLoader;
+import com.android.volley.toolbox.Volley;
+import com.techno.misskeen.Recipe;
+import com.techno.misskeen.RecipeListAdapter;
 
 public class RecipeListFragment extends ListFragment {
 
-    ListView list;
+
+    private ImageLoader mImageLoader;
+    private static final String url = "http://ditoraharjo.co/misskeen/api/v1/recipe".toString().trim();
+    private ProgressDialog pDialog;
+    private List<Recipe> recipeList = new ArrayList<Recipe>();
+    private ListView listView;
+    private RecipeListAdapter adapter;
 
 
 
@@ -40,14 +61,20 @@ public class RecipeListFragment extends ListFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view;
         view = inflater.inflate(R.layout.activity_recipe_list, container, false);
-
         return view;
     }
     public void onViewCreated(View view, Bundle savedInstanceState){
-        list = (ListView) getView().findViewById(R.id.recipelist);
 
+        listView = (ListView) getView().findViewById(R.id.recipelist);
+        adapter = new RecipeListAdapter(this.getActivity(), recipeList);
+        listView.setAdapter(adapter);
+
+        pDialog = new ProgressDialog(getActivity());
+        // Showing progress dialog before making http request
+        pDialog.setMessage("Loading...");
+        pDialog.show();
         getDataResep();
-        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String recipeid = ((TextView) view.findViewById(R.id.recipeid)).getText().toString();
@@ -76,12 +103,36 @@ public class RecipeListFragment extends ListFragment {
 
 
     private void getDataResep() {
-        String url = "http://ditoraharjo.co/misskeen/api/v1/recipe".toString().trim();
 
-        StringRequest stringRequest = new StringRequest(url, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                showJSON(response);
+
+        JsonArrayRequest recipeReq = new JsonArrayRequest(url,
+                new Response.Listener<JSONArray>() {
+
+            public void onResponse(JSONArray response) {
+                for (int i = 0; i < response.length(); i++) {
+                    try {
+
+                        JSONObject obj = response.getJSONObject(i);
+                        Recipe recipe = new Recipe();
+                        recipe.setRecipeid(obj.getString("id"));
+                        recipe.setRecipethumbnail(obj.getString("image"));
+                        recipe.setRecipedescription(obj.getString("description"));
+                        recipe.setRecipename(obj.getString("name"));
+                        recipe.setReciperating(obj.getString("rating"));
+
+                        // adding movie to movies array
+                        recipeList.add(recipe);
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+                }
+
+                // notifying list adapter about data changes
+                // so that it renders the list view with updated data
+                adapter.notifyDataSetChanged();
+
             }
         },
                 new Response.ErrorListener() {
@@ -91,8 +142,8 @@ public class RecipeListFragment extends ListFragment {
                     }
                 });
 
-        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
-        requestQueue.add(stringRequest);
+
+        AppController.getInstance().addToRequestQueue(recipeReq);
     }
 
     private void showJSON(String json) {
@@ -131,6 +182,6 @@ public class RecipeListFragment extends ListFragment {
                 new String[]{"id", "name", "description", "image", "rating"},
                 new int[]{R.id.recipeid, R.id.recipename, R.id.recipedescription, R.id.recipethumbnail, R.id.reciperating}
         );
-        list.setAdapter(adapter);
+        listView.setAdapter(adapter);
     }
 }
