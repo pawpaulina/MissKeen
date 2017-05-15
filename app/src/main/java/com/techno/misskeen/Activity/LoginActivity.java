@@ -61,9 +61,11 @@ public class LoginActivity extends AppCompatActivity {
                 if(response.body().getStatus().equals("true"))
                 {
                     PrefHelper.saveToPref(getApplicationContext(), "email", "password");
-                    RecipeListFragment.newInstance();
-                    FragmentManager fm= getSupportFragmentManager();
-                    fm.beginTransaction().add(RecipeListFragment.newInstance(),"").commit();
+                    Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(i);
+//                    RecipeListFragment.newInstance();
+//                    FragmentManager fm= getSupportFragmentManager();
+//                    fm.beginTransaction().add(RecipeListFragment.newInstance(),"").commit();
                 }
                 else
                     if(response.body().getStatus().equals("false"))
