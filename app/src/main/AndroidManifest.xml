@@ -19,7 +19,10 @@
         </activity>
         <activity android:name=".Activity.LoginActivity" />
         <activity android:name=".Activity.RegisterActivity" />
-        <activity android:name=".Fragment.RecipeListFragment"/>
+        <activity android:name=".Activity.MainActivity"
+            android:theme="@style/Theme.Design.Light.NoActionBar"/>
+        <activity android:name=".Activity.PrivacyPolicyActivity"/>
+        <activity android:name=".Activity.AboutUsActivity"/>
     </application>
 
 </manifest>
