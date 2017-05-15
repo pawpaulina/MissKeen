@@ -19,6 +19,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.techno.misskeen.Activity.RecipeDetail;
 import com.techno.misskeen.R;
 
 import org.json.JSONArray;
@@ -49,7 +50,10 @@ public class RecipeListFragment extends ListFragment {
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+                String recipeid = ((TextView) view.findViewById(R.id.recipeid)).getText().toString();
+                Intent in = new Intent(getActivity(),RecipeDetail.class);
+                in.putExtra("recipeid",recipeid);
+                startActivity(in);
             }
         });
     }
