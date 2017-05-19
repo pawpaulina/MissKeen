@@ -3,12 +3,11 @@ package com.techno.misskeen.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -16,8 +15,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.gson.Gson;
 import com.techno.misskeen.Client;
-import com.techno.misskeen.Fragment.RecipeListFragment;
 import com.techno.misskeen.Helper.PrefHelper;
 import com.techno.misskeen.R;
 import com.techno.misskeen.Rest;
@@ -36,6 +35,9 @@ public class LoginActivity extends AppCompatActivity {
 
     private Button btnLogin;
     private Button btnRegis;
+
+
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
     {
         editUsername = (EditText) findViewById(R.id.editUsername);
         editPassword = (EditText) findViewById(R.id.editPassword);
-        UserObject user = new UserObject(editUsername.getText().toString(), editPassword.getText().toString());
+        final UserObject user = new UserObject(editUsername.getText().toString(), editPassword.getText().toString());
         Rest rest = Client.getClient().create(Rest.class);
         Call<User> call = rest.getLogin(user);
         call.enqueue(new Callback<User>() {
@@ -60,9 +62,15 @@ public class LoginActivity extends AppCompatActivity {
             public void onResponse(Call<User> call, retrofit2.Response<User> response) {
                 if(response.body().getStatus().equals("true"))
                 {
+                    UserObject userObject = new UserObject();
+                    userObject = response.body().getUser();
+                    saveObjectToSharedPreference(getApplicationContext(), "mPreference", "mObjectKey", userObject);
+
                     PrefHelper.saveToPref(getApplicationContext(), "email", "password");
                     Intent i = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(i);
+
+
 //                    RecipeListFragment.newInstance();
 //                    FragmentManager fm= getSupportFragmentManager();
 //                    fm.beginTransaction().add(RecipeListFragment.newInstance(),"").commit();
@@ -101,6 +109,14 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+    }
+    public static void saveObjectToSharedPreference(Context context, String preferenceFileName, String serializedObjectKey, Object object) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences(preferenceFileName, 0);
+        SharedPreferences.Editor sharedPreferencesEditor = sharedPreferences.edit();
+        final Gson gson = new Gson();
+        String serializedObject = gson.toJson(object);
+        sharedPreferencesEditor.putString(serializedObjectKey, serializedObject);
+        sharedPreferencesEditor.apply();
     }
 //
 //    public void buttonLogin(View v)
