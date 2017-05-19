@@ -2,11 +2,16 @@
   <library name="volley-1.0.0">
     <CLASSES>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <root url="jar://$USER_HOME$/.android/build-cache/5fc836711b5fa352b3783076d1553e1bea365978/output/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.android/build-cache/5fc836711b5fa352b3783076d1553e1bea365978/output/res" />
 =======
       <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.volley/volley/1.0.0/res" />
       <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.volley/volley/1.0.0/jars/classes.jar!/" />
+>>>>>>> master
+=======
+      <root url="jar://$USER_HOME$/.android/build-cache/6a011cf65277523fcd70fdf6fd45ce5d1383ef8c/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/6a011cf65277523fcd70fdf6fd45ce5d1383ef8c/output/res" />
 >>>>>>> master
     </CLASSES>
     <JAVADOC />

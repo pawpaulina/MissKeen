@@ -1,6 +1,7 @@
 <component name="libraryTable">
   <library name="appcompat-v7-23.3.0">
     <CLASSES>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res" />
       <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/jars/classes.jar!/" />
@@ -23,6 +24,14 @@
 =======
 >>>>>>> master
       <root url="jar://$USER_HOME$/Documents/sdk/extras/android/m2repository/com/android/support/appcompat-v7/23.3.0/appcompat-v7-23.3.0-sources.jar!/" />
+>>>>>>> master
+=======
+      <root url="file://$USER_HOME$/.android/build-cache/266739f961fb0f9a018ce874612c4620b4f6f513/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/266739f961fb0f9a018ce874612c4620b4f6f513/output/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/Android/Sdk/extras/android/m2repository/com/android/support/appcompat-v7/23.3.0/appcompat-v7-23.3.0-sources.jar!/" />
 >>>>>>> master
     </SOURCES>
   </library>
