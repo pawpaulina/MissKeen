@@ -69,6 +69,7 @@ public class RecipeListFragment extends ListFragment {
         adapter = new RecipeListAdapter(this.getActivity(), recipeList);
         listView.setAdapter(adapter);
 
+
         pDialog = new ProgressDialog(getActivity());
         // Showing progress dialog before making http request
         pDialog.setMessage("Loading...");
@@ -183,5 +184,6 @@ public class RecipeListFragment extends ListFragment {
                 new int[]{R.id.recipeid, R.id.recipename, R.id.recipedescription, R.id.recipethumbnail, R.id.reciperating}
         );
         listView.setAdapter(adapter);
+        pDialog.dismiss();
     }
 }

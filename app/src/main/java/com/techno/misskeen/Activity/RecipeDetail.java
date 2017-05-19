@@ -28,9 +28,11 @@ import org.json.JSONObject;
 import static java.security.AccessController.getContext;
 
 public class RecipeDetail extends AppCompatActivity {
-    private static final String url = "http://ditoraharjo.co/misskeen/api/v1/recipe".toString().trim();
+    private static final String url = "http://ditoraharjo.co/misskeen/api/v1/recipe/".toString().trim();
     private ImageView imageView;
     private TextView txtrecipename,txtrecipedescription,txtrecipesteps,txtrecipeingredients;
+    Bundle extras;
+    String id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +42,8 @@ public class RecipeDetail extends AppCompatActivity {
         txtrecipedescription=(TextView)findViewById(R.id.recipedetaildescription);
         txtrecipesteps=(TextView)findViewById(R.id.recipesteps);
         txtrecipeingredients=(TextView)findViewById(R.id.recipeingredients);
+        extras = getIntent().getExtras();
+        id=extras.getString("recipeid");
         getDataResep();
 
     }
@@ -48,7 +52,7 @@ public class RecipeDetail extends AppCompatActivity {
     private void getDataResep() {
 
 
-        JsonArrayRequest recipeReq = new JsonArrayRequest(url,
+        JsonArrayRequest recipeReq = new JsonArrayRequest(url+id,
                 new Response.Listener<JSONArray>() {
 
                     public void onResponse(JSONArray response) {
