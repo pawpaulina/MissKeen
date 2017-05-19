@@ -25,7 +25,8 @@
             android:theme="@style/Theme.Design.Light.NoActionBar" />
         <activity android:name=".Activity.PrivacyPolicyActivity" />
         <activity android:name=".Activity.AboutUsActivity" />
-        <activity android:name=".Activity.RecipeDetail"></activity>
+        <activity android:name=".Activity.RecipeDetail" />
+        <activity android:name=".Activity.CreateRecipe"></activity>
     </application>
 
 </manifest>
