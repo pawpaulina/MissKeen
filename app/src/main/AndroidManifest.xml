@@ -26,7 +26,11 @@
         <activity android:name=".Activity.PrivacyPolicyActivity" />
         <activity android:name=".Activity.AboutUsActivity" />
         <activity android:name=".Activity.RecipeDetail" />
+<<<<<<< HEAD
         <activity android:name=".Activity.CreateRecipe"></activity>
+=======
+        <activity android:name=".Activity.ProfileActivity"></activity>
+>>>>>>> master
     </application>
 
 </manifest>
