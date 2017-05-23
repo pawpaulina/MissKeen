@@ -22,6 +22,8 @@ import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.scalified.fab.ActionButton;
+import com.techno.misskeen.Activity.CreateRecipe;
 import com.techno.misskeen.Activity.RecipeDetail;
 import com.techno.misskeen.AppController;
 import com.techno.misskeen.LruBitmapCache;
@@ -54,6 +56,7 @@ public class RecipeListFragment extends ListFragment {
     private List<Recipe> recipeList = new ArrayList<Recipe>();
     private ListView listView;
     private RecipeListAdapter adapter;
+    private ActionButton btntambah;
 
 
 
@@ -84,6 +87,15 @@ public class RecipeListFragment extends ListFragment {
                 startActivity(in);
             }
         });
+        btntambah=(ActionButton)getView().findViewById(R.id.btntambahresep);
+        btntambah.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent in = new Intent(getActivity(), CreateRecipe.class);
+                startActivity(in);
+            }
+        });
+
     }
 
 
